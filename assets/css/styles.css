@@ -426,6 +426,7 @@ img {
   display: flex;
   justify-content: space-between;
   margin-bottom: var(--mb-0-5);
+  align-items: center;
 }
 
 .skills__name{
@@ -472,7 +473,9 @@ img {
   grid-template-columns: 1fr max-content 1fr;
   column-gap: 1.5rem;
 }
-
+.qualification__data-divs{
+  display: flex;
+}
 .qualification__title{
   font-size: var(--normal-font-size);
   font-weight: var(--font-medium);
@@ -533,12 +536,12 @@ img {
 .portfolio__content{
   padding: 0 1.5rem;
 }
-
 .portfolio__img{
   width: 265px;
   border-radius: 0.5rem;
   justify-self: center;
 }
+
 
 .portfolio__title{
   font-size: var(--h3-font-size);
@@ -773,7 +776,16 @@ img {
   .qualification__data{
     gap: .5rem;
   }
+
+  .skills__logo{
+    width: 40px;
+  }
   
+}
+@media screen and (max-width:567px){
+  .skills__logo{
+    width: 50px;
+  }
 }
 
 @media screen and (min-width: 568px){
@@ -801,7 +813,9 @@ img {
     justify-content: center;
 
   }
-
+  .skills__logo{
+    width: 50px;
+  }
 }
 /* For medium devices */
 
@@ -882,6 +896,7 @@ img {
     grid-template-columns: .5fr;
   }
   
+
   .portfolio__img{
     width: 320px;
   }
@@ -905,6 +920,9 @@ img {
   .footer__copy{
     margin-top: 4.5rem;
   }
+  .skills__logo{
+    width: 70px;
+  }
 }
 
 /* For large devices */
@@ -919,7 +937,7 @@ img {
 
 
   .home__blob{
-    width: 320px;
+    width: 420px;
   }
   .home__social{
     transform: translateX(-6rem);
@@ -949,4 +967,38 @@ img {
   .contact__inputs{
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .skills__logo{
+    width: 80px;
+  }
+  .qualification__data{
+    width: 600px;
+  }
+}
+
+/* ========= Animations ===================*/
+
+.typewriter{
+  color: #fff;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
 }
